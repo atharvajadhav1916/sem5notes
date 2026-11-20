@@ -1,6 +1,10 @@
 # sem5notes
 
 **EXP 2**
+```sql
+-- your Exp 02 SQL code here
+
+
 -- 1. Create Dimension Tables (Descriptive Context)
 CREATE TABLE Dim_Product (
     prod_id INT PRIMARY KEY,
@@ -79,10 +83,14 @@ JOIN Dim_Customer c ON f.cust_id = c.cust_id
 JOIN Dim_Store s ON f.store_id = s.store_id
 JOIN Dim_Product p ON f.prod_id = p.prod_id
 JOIN Dim_Time t ON f.time_id = t.time_id;
-
+```
 
 
 **EXP3**
+```sql
+-- your Exp 03 SQL code here
+
+
 -- Setup Tables & Data (Same as Exp 02)
 CREATE TABLE Dim_Product (prod_id INT PRIMARY KEY, prod_name VARCHAR(50), category VARCHAR(30));
 CREATE TABLE Dim_Customer (cust_id INT PRIMARY KEY, cust_name VARCHAR(50), region VARCHAR(30));
@@ -157,10 +165,13 @@ FROM Fact_Sales f
 JOIN Dim_Product p ON f.prod_id = p.prod_id
 JOIN Dim_Customer c ON f.cust_id = c.cust_id
 GROUP BY p.category;
-
+```
 
 
 **EXP 4**
+```python
+# your Exp 04 Python code here
+
 import pandas as pd
 import numpy as np
 from sklearn.impute import SimpleImputer
@@ -207,9 +218,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 print("--- 5. TRAIN / TEST SPLIT SHAPES ---")
 print("X_train shape:", X_train.shape)
 print("X_test shape:", X_test.shape)
-
+```
 
 **EXP 5**
+```python
+# your Exp 05 Python code here
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -255,9 +269,12 @@ axes[1, 1].set_title('4. Feature Correlation (Heatmap)')
 
 plt.tight_layout()
 plt.show()
-
+```
 
 **EXP 6**
+```python
+# your Exp 06 Python code here
+
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -293,9 +310,12 @@ print("Classification Report:\n", classification_report(y_test, nb_preds, target
 new_sample = [[5.1, 3.5, 1.4, 0.2]]
 pred_class = iris.target_names[dt_model.predict(new_sample)[0]]
 print(f"New Sample {new_sample} Predicted Class: {pred_class}")
-
+```
 
 **EXP 7**
+
+```python
+# your Exp 07 Python code here
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
@@ -331,9 +351,13 @@ plt.ylabel('Spending Score (1-100)')
 plt.legend()
 plt.grid(True)
 plt.show()
-
+```
 
 **EXP 8**
+```python
+# your Exp 08 Python code here
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram, linkage
@@ -377,9 +401,12 @@ axes[1].grid(True)
 
 plt.tight_layout()
 plt.show()
-
+```
 
 **EXP 9**
+```python
+# your Exp 09 Python code here
+
 import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
@@ -413,9 +440,12 @@ print(frequent_itemsets, "\n")
 rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.7)
 print("--- 3. ASSOCIATION RULES (Confidence >= 0.7) ---")
 print(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
-
+```
 
 **EXP 10**
+```python
+# your Exp 10 Python code here
+
 import numpy as np
 import pandas as pd
 
@@ -464,8 +494,12 @@ results = pd.DataFrame({
 
 print("--- 2. FINAL PAGERANK SCORES (HIGHEST TO LOWEST) ---")
 print(results.to_string(index=False))
+```
 
 **EXP 11**
+```python
+# your Exp 11 Python code here
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -551,3 +585,4 @@ axes[1].set_xlabel('Importance Score')
 
 plt.tight_layout()
 plt.show()
+```
